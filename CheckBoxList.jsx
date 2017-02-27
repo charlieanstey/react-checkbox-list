@@ -6,6 +6,7 @@ module.exports = React.createClass({
 	displayName: 'CheckBoxList',
 
 	propTypes: {
+		id: React.PropTypes.number.isRequired,
 		defaultData: React.PropTypes.array,
 		onChange: React.PropTypes.func
 	},
@@ -33,7 +34,7 @@ module.exports = React.createClass({
 		this.setState({data: newData});
 
 		if(this.props.onChange) {
-			this.props.onChange(selectedValues);
+			this.props.onChange(this.props.id, selectedValues);
 		}
 	},
 
