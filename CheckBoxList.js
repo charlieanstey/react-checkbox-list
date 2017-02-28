@@ -6,7 +6,12 @@ module.exports = React.createClass({
 
 	propTypes: {
 		id: React.PropTypes.number.isRequired,
-		defaultData: React.PropTypes.array,
+		defaultData: React.PropTypes.arrayOf(
+			React.PropTypes.shape({
+				label: React.PropTypes.string,
+				value: React.PropTypes.string
+			})
+		),
 		onChange: React.PropTypes.func
 	},
 
